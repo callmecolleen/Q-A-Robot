@@ -26,17 +26,17 @@ App({
   },
   globalData:{
     userInfo:null,
-    NLPAppkey: "c3f5b2f4fe2445fcb339cc43e6d8b6aa",
-    NLPAppSecret: "42878255d5a54dc2918fb6b542db33da",
+    NLPAppkey: "********************************",
+    NLPAppSecret: "********************************",
     NLPUrl: "https://cn.olami.ai/cloudservice/api",
-    NLPCusid: "353313079389284",
+    NLPCusid: "***************",
     //slikToCharUrl: "https://api.happycxz.com/test/silk2asr/olami/asr",
     slikToCharUrl: "https://api.happycxz.com/wxapp/silk2asr",
   },
 
   // Request function
   req: function (method, url, arg) {
-    let domian = 'https://www.tuling123.com/', data = { 'key': 'a57550a2842242cf82f7fcc96ec97795' }, dataType = 'json';//我的图灵api
+    let domian = 'https://www.tuling123.com/', data = { 'key': '********************************' }, dataType = 'json';//我的图灵api
     let header = { 'content-type': 'application/x-www-form-urlencoded' };
 
     if (arg.data) {
