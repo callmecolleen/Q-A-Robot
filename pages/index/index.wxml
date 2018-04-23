@@ -1,0 +1,30 @@
+<view class="main-container">
+
+    <scroll-view class="content" scroll-y="true">
+        <import src="../templates/me-tpl"/>
+        <import src="../templates/robot-tpl"/>
+        <block wx:for="{{content}}" wx:key="item">
+            <template wx:if="{{item.isRobot}}" is="robot-tpl" data="{{item}}"/>
+            <template wx:if="{{!item.isRobot}}" is="me-tpl" data="{{item}}"/>
+        </block>
+    </scroll-view>
+
+ <view class="sender-container">
+    <image class="text-video-img" src="/pages/imgs/speak.png" 
+            mode="widthFix" style="width:37px; height:37px;" hidden="{{keyboard}}" bindtap="switchInputType"></image>
+    <image class="text-video-img" src="/pages/imgs/keyboard.png"
+            mode="widthFix" style="width:37px; height:37px;" hidden="{{!keyboard}}" bindtap="switchInputType"></image>
+    <view >
+        <input placeholder="输入您的问题"style="width:235px;" hidden="{{keyboard}}" focus="{{!keyboard}}" value="{{q}}" bindinput="inputEvent"/>
+    </view>
+    <view>
+        <button type="primary" hidden="{{keyboard}}" focus="{{!keyboard}}"  bindtap="queryAnswer">发送</button>
+    </view>
+
+    <view style="flex-grow:3">
+        <button hidden="{{!keyboard}}" style="width:320px;" bindtouchstart="touchdown" bindtouchend="touchup">按住 说话</button>
+    </view>
+   
+  </view>
+</view>
+<image class="speaker" hidden="{{!isSpeaking}}" src="{{speakerUrl}}"></image>
